@@ -9,7 +9,9 @@ import { routing }        from './app.routing';
 import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { JwtInterceptorProvider, ErrorInterceptorProvider } from './_helpers/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
+import { AlertService, AuthenticationService, UserService, CreditDebitService } from './_services/index';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
@@ -19,7 +21,18 @@ import { RegisterComponent } from './register/index';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        routing
+        routing,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRippleModule,
+        BrowserAnimationsModule,
+    ],
+    exports: [
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRippleModule,
     ],
     declarations: [
         AppComponent,
@@ -33,6 +46,7 @@ import { RegisterComponent } from './register/index';
         AlertService,
         AuthenticationService,
         UserService,
+        CreditDebitService,
         JwtInterceptorProvider,
         ErrorInterceptorProvider
     ],
